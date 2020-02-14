@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pemilihan Pengurus OSIS 2019/2020</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    <meta name="keywords"
+        content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/login-style.css">
+    <!------ Include the above in your HEAD tag ---------->
+    <link rel="icon" type="image/png" href="img/favicon.jpg">
+</head>
+
+<body>
+    <div class="header">
+        <div class="bg-color">
+            <header id="main-header">
+
+            </header>
+            <div class="wrapper">
+                <div class="container banner-container">
+                    <div class="row">
+                        <div class="banner-info text-center wow fadeIn delay-05s">
+                            <h1 class="bnr-title">Selamat datang di</h1>
+                            <h2 class="bnr-sub-title">Pemilihan Pengurus OSIS Stembayo</h2>
+                            <!-- <p class="bnr-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip <br>ex ea commodo
+                                        consequat.</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container h-80">
+                <div class="row align-items-center h-100">
+                    <div class="col-3 mx-auto">
+                        <div class="text-center align-items-center">
+                            <!-- <img id="profile-img" class="rounded-circle profile-img-card" src="img/stembayo.jpg" /> -->
+                            <p id="profile-name" class="profile-name-card"></p>
+                            <form class="form-signin" id="my_form_id">
+                                <input type="username" name="NIS" id="inputNIS" class=" form-group" placeholder="NIS"
+                                    required autofocus>
+                                <div class="submit-container">
+                                    <button
+                                        class="btn btn-lg btn-primary btn-block btn-signin submit-button float-right"
+                                        type="submit">Masuk</button>
+                                </div>
+
+                            </form><!-- /form -->
+                        </div>
+                    </div>
+                    <br><br><br><br>
+            <div class="submit-container"> <h6><a style="color: white;" href="loginadmin/index.html">Login sebagai admin</a></h6></div>
+        </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"> </script> <script>
+                                        $(document).ready(function(){
+
+                                            $('#my_form_id').on('submit', rep);
+
+                                            var _data;
+                                        function submit() {
+
+                                        var inputNIS = $('#inputNIS').val();
+                                        $.ajax({
+                                        type: "POST",
+                                        url: 'login.php',
+                                        data: {inputNIS : inputNIS},
+                                        success: function(data){
+                                        if (data) {
+                                            localStorage.setItem("textvalue", data);
+                                            _data = data;
+                                        
+                                        var niss = document.getElementById("inputNIS").value;
+                                        localStorage.setItem("NIS", niss);
+                                        } else {
+                                            alert("tidak ada")
+                                        }
+                                        }
+                                        });
+                                        }
+
+                                        
+                                        
+
+                                        function rep(e){
+                                        e.preventDefault();
+                                        submit();
+                                      
+                                        
+
+                                        var masukBtn = document.getElementById("inputNIS").value ;
+                                        if (masukBtn == ""){
+
+                                        }
+                                        else if (_data){
+                                        window.location.href='index.html';
+                                        }
+                                        }
+                                        });
+                                        </script>
+
+</html>
